@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="decreaseBtn" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="productNum" type="text" class="form-control text-center" value="1">
+                           <button id="addBtn" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$<span id="phoneValue">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -126,7 +126,54 @@
             }
       })
 
-      
+      const addBtn = document.getElementById("addBtn");
+         addBtn.addEventListener("click", function () {
+         const productNumber = document.getElementById("productNum").value;
+         const productNumberBtn = parseFloat(productNumber) + 1;
+         //const totalProduct = 1 + productNumberBtn;
+         document.getElementById("productNum").value = productNumberBtn;
+
+         const phoneValue = document.getElementById("phoneValue").innerText;
+         const phonePriceNumber = parseFloat(phoneValue);
+         const totalPhonePrice = 59 * productNumberBtn;
+         document.getElementById("phoneValue").innerText = totalPhonePrice;
+
+         const subTotal = document.getElementById("subTotal").value;
+         const subtotalNumber = parseFloat(subTotal);
+         const allProductPrice = 1278 + phonePriceNumber;
+         document.getElementById("subTotal").innerText = allProductPrice;
+
+         const total = document.getElementById("total").innerText;
+         const totalPrice = parseFloat(total);
+         const totalProductPrice = 1278 + phonePriceNumber;
+         document.getElementById("total").innerText = totalProductPrice;
+         
+      })
+
+      const decreaseBtn = document.getElementById("decreaseBtn");
+         decreaseBtn.addEventListener("click", function () {
+         const totalItemBtn = document.getElementById("productNum").value;
+         const minusProduct = parseFloat(totalItemBtn) - 1;
+         if (minusProduct > 0) {
+         document.getElementById("productNum").value = minusProduct;
+
+         const phoneValue = document.getElementById("phoneValue").innerText;
+         const phonePriceNumber = parseFloat(phoneValue);
+         const totalPhonePrice = phonePriceNumber - 59;
+         document.getElementById("phoneValue").innerText = totalPhonePrice;
+
+         const subTotal = document.getElementById("subTotal").innerText;
+         const subtotalNumber = parseFloat(subTotal);
+         const allProductPrice = subtotalNumber -59;
+         document.getElementById("subTotal").innerText = allProductPrice;
+
+         const total = document.getElementById("total").innerText;
+         const totalPrice = parseFloat(total);
+         const totalProductPrice = totalPrice -59;
+         document.getElementById("total").innerText = totalProductPrice;
+         
+            }
+      })
          
       
       
