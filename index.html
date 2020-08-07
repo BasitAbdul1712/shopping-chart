@@ -90,16 +90,25 @@
          const totalPhonePrice = 1219 * productNumberBtn;
          document.getElementById("phonePrice").innerText = totalPhonePrice;
 
-         const subTotal = document.getElementById("subTotal").innerText;
+         /* const subTotal = document.getElementById("subTotal").innerText;
          const subtotalNumber = parseFloat(subTotal);
          const allProductPrice = 1278 + phonePriceNumber;
-         document.getElementById("subTotal").innerText = allProductPrice;
-
-         const total = document.getElementById("total").innerText;
+         document.getElementById("subTotal").innerText = allProductPrice; */
+         
+         /* const total = document.getElementById("total").innerText;
          const totalPrice = parseFloat(total);
          const totalProductPrice = 1278 + phonePriceNumber;
-         document.getElementById("total").innerText = totalProductPrice;
-         
+         document.getElementById("total").innerText = totalProductPrice; */
+        
+         getInputSubTotal("subTotal");
+         getInputSubTotal("total");
+
+         function getInputSubTotal(id) {
+         const subTotal = document.getElementById(id).value;
+         const subtotalNumber = parseFloat(subTotal);
+         const allProductPrice = 1278 + phonePriceNumber;
+         document.getElementById(id).innerText = allProductPrice;
+      }
       })
       const minusBtn = document.getElementById("minusBtn");
          minusBtn.addEventListener("click", function () {
@@ -108,7 +117,7 @@
          if (minusProduct > 0) {
          document.getElementById("productNumber").value = minusProduct;
 
-         const phonePrice = document.getElementById("phonePrice").innerText;
+         /*const phonePrice = document.getElementById("phonePrice").innerText;
          const phonePriceNumber = parseFloat(phonePrice);
          const totalPhonePrice = phonePriceNumber - 1219;
          document.getElementById("phonePrice").innerText = totalPhonePrice;
@@ -121,9 +130,20 @@
          const total = document.getElementById("total").innerText;
          const totalPrice = parseFloat(total);
          const totalProductPrice = totalPrice -1219;
-         document.getElementById("total").innerText = totalProductPrice;
+         document.getElementById("total").innerText = totalProductPrice; */
+
+         getInputTotal("phonePrice")
+         getInputTotal("subTotal");
+         getInputTotal("total");
+
+         function getInputTotal(Id) {
+         const total = document.getElementById(Id).innerText;
+         const totalPrice = parseFloat(total);
+         const totalProductPrice = totalPrice -1219;
+         document.getElementById(Id).innerText = totalProductPrice;   
+         }
          
-            }
+       }
       })
 
       const addBtn = document.getElementById("addBtn");
@@ -138,16 +158,25 @@
          const totalPhonePrice = 59 * productNumberBtn;
          document.getElementById("phoneValue").innerText = totalPhonePrice;
 
-         const subTotal = document.getElementById("subTotal").value;
+         /*const subTotal = document.getElementById("subTotal").value;
          const subtotalNumber = parseFloat(subTotal);
          const allProductPrice = 1278 + phonePriceNumber;
-         document.getElementById("subTotal").innerText = allProductPrice;
+         document.getElementById("subTotal").innerText = allProductPrice; 
+         getInputSubTotal("subTotal");
 
          const total = document.getElementById("total").innerText;
          const totalPrice = parseFloat(total);
          const totalProductPrice = 1278 + phonePriceNumber;
-         document.getElementById("total").innerText = totalProductPrice;
+         document.getElementById("total").innerText = totalProductPrice; */
          
+         getInputSubTotal("subTotal");
+         getInputSubTotal("total")
+         function getInputSubTotal(id) {
+         const subTotal = document.getElementById(id).value;
+         const subtotalNumber = parseFloat(subTotal);
+         const allProductPrice = 1278 + phonePriceNumber;
+         document.getElementById(id).innerText = allProductPrice;
+      }
       })
 
       const decreaseBtn = document.getElementById("decreaseBtn");
@@ -157,7 +186,7 @@
          if (minusProduct > 0) {
          document.getElementById("productNum").value = minusProduct;
 
-         const phoneValue = document.getElementById("phoneValue").innerText;
+         /* const phoneValue = document.getElementById("phoneValue").innerText;
          const phonePriceNumber = parseFloat(phoneValue);
          const totalPhonePrice = phonePriceNumber - 59;
          document.getElementById("phoneValue").innerText = totalPhonePrice;
@@ -170,11 +199,21 @@
          const total = document.getElementById("total").innerText;
          const totalPrice = parseFloat(total);
          const totalProductPrice = totalPrice -59;
-         document.getElementById("total").innerText = totalProductPrice;
-         
+         document.getElementById("total").innerText = totalProductPrice; */
+
+         getInputValue("phoneValue")
+         getInputValue("subTotal");
+         getInputValue("total");
+
+         function getInputValue(Id) {
+         const total = document.getElementById(Id).innerText;
+         const totalPrice = parseFloat(total);
+         const totalProductPrice = totalPrice -59;
+         document.getElementById(Id).innerText = totalProductPrice; }
             }
       })
-         
+
+
       
       
     
